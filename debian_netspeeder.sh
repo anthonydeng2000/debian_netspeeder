@@ -6,7 +6,7 @@ if [ $(id -u) != "0" ]; then
 fi
 
 echo "=========================================================================\n"
-printf "Version 0.1 \n"
+printf "Version 0.2 \n"
 
 apt-get update
 
@@ -33,8 +33,9 @@ nohup /root/net_speeder $INTERFACE "ip" >/dev/null 2>&1 &
 
 sed -i 's/exit\ 0/#exit\ 0/' /etc/rc.local
 echo 'nohup /root/net_speeder $INTERFACE "ip" >/dev/null 2>&1 &' >> /etc/rc.local  
+echo 'nohup /root/net_speeder $INTERFACE "ip" >/dev/null 2>&1 &' >> /etc/rc.local  
 echo exit 0 >> /etc/rc.local
 
 echo "=========================================================================\n"
-echo "net-speeder 已安装并启动完毕!"
+echo "Net-speeder has been installed!"
 
